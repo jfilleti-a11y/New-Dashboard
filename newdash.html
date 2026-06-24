@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wave Header Component</title>
+<style>
+  /* --- Base Resets & Typography --- */
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+  }
+
+  /* --- Structural Color Coding (As Requested) --- */
+  .top-nav-section { background-color: #9ff07d; /* Green */ }
+  .header-section { 
+    background-color: #000000; /* Black */ 
+    overflow: hidden; /* Prevents horizontal scroll from the over-extending video */
+  }
+  .bottom-section { background-color: #ff5757; /* Red */ height: 200px; }
+
+  /* --- Top Navigation --- */
+  .nav-container { 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    padding: 1.5rem 2rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+  }
+  .nav-left { display: flex; align-items: center; gap: 2rem; }
+  .logo { font-size: 1.5rem; font-weight: 800; color: #001a4d; display: flex; align-items: center; gap: 0.25rem; }
+  .nav-links { display: flex; list-style: none; gap: 1.5rem; }
+  .nav-links li { color: #001a4d; font-size: 0.95rem; font-weight: 500; cursor: pointer; }
+  
+  .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+  .login-link { color: #001a4d; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  .btn-primary { 
+    background-color: #1a56ff; 
+    color: white; 
+    border: none; 
+    padding: 0.7rem 1.5rem; 
+    border-radius: 9999px; 
+    font-size: 0.95rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+  }
+
+  /* --- Header / Hero Layout --- */
+  .hero-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    align-items: stretch; /* Ensures both columns are exactly equal height */
+    min-height: 350px; 
+  }
+  
+  /* Both columns are equally sized and grey */
+  .col { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    background-color: #9e9e9e; /* Grey mockup column */
+  }
+  
+  /* --- Left Column Content --- */
+  .col-left { 
+    padding: 4rem 3rem 4rem 3rem; /* Padding adjustments to match visual hierarchy */
+    justify-content: center; 
+    background-color:pink;
+  }
+  .rating { font-size: 0.8rem; color: #4a4a4a; margin-bottom: 1.5rem; font-weight: 500; }
+  .subheading { 
+    color: #9b51e0; 
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+    margin-bottom: 0.5rem; 
+  }
+  .main-heading { 
+    color: #001a4d; 
+    font-size: 3.5rem; 
+    line-height: 1.1; 
+    margin-bottom: 1rem; 
+    font-weight: 500; 
+    letter-spacing: -1px;
+  }
+  .description { 
+    color: #001a4d; 
+    font-size: 1.1rem; 
+    line-height: 1.5; 
+    margin-bottom: 2rem; 
+    max-width: 95%; 
+  }
+  .col-left .btn-primary { width: fit-content; padding: 0.8rem 1.8rem; font-size: 1rem;  }
+
+  /* --- Right Column Content (Video) --- */
+  .col-right { 
+    position: relative; /* Anchors the absolute positioned video */
+    display: flex; 
+    align-items: center; 
+    background-color:yellow;
+  }
+  
+  .video-wrapper { 
+    position: absolute; 
+    width: 880px; /* Forces the over-extension outside the column */
+    left: -2rem; /* Slight offset to separate text from video */
+    bottom: -2rem;
+    top: auto;
+    z-index: 10; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    background: white; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* Adds depth over the black background */
+  }
+  .hero-video { width: 100%; display: block; object-fit: cover; }
+
+  /* --- Responsive Breakpoints --- */
+  @media (max-width: 992px) {
+    .nav-links { display: none; } /* Simplified mobile nav */
+    .hero-container { flex-direction: column; }
+    
+    /* Reset left column padding */
+    .col-left { padding: 3rem 2rem; align-items: center; text-align: center; }
+    .description { max-width: 100%; }
+    
+    /* Reset video over-extension so it stacks neatly */
+    .col-right { min-height: 300px; padding: 2rem }
+    .video-wrapper { 
+      position: relative; 
+      width: 100%; 
+      top: 0; 
+      left: 0;
+      transform: none; 
+      margin: 0 auto; 
+    }
+    .main-heading { font-size: 2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+  <nav class="top-nav-section">
+    <div class="nav-container">
+      <div class="nav-left">
+        <div class="logo">
+          wave
+        </div>
+        <ul class="nav-links">
+          <li>Solutions</li>
+          <li>Advisors</li>
+          <li>Pricing</li>
+          <li>Resources</li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <a href="#" class="login-link">Log in</a>
+        <button class="btn-primary">Get started</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="header-section">
+    <div class="hero-container">
+      
+      <div class="col col-left">
+        <div class="rating">4.6 ★★★★★ | Google</div>
+        <div class="subheading">WAVE: SMALL BUSINESS SOFTWARE</div>
+        <h1 class="main-heading">Clear books.<br>Confident decisions</h1>
+        <p class="description">Accounting at the core, invoicing and payments together to help you see clearly, decide faster, and run your business with the confidence you deserve.</p>
+        <button class="btn-primary">Get started</button>
+      </div>
+
+      <div class="col col-right">
+        <div class="video-wrapper">
+          <video class="hero-video" autoplay loop muted playsinline>
+            <source src="dash.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <section class="bottom-section"></section>
+
+</body>
+</html>
