@@ -10,128 +10,128 @@
 
 <style>
   /* --- Base Resets & Typography --- */
-  * { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
   /* --- Structural Color Coding --- */
-  .top-nav-section { 
-    background-color: #FAF4F1; 
+  .top-nav-section {
+    background-color: #FAF4F1;
     border-bottom: 1px solid #E3DCD8; /* Line extending to browser edges */
   }
-  
-  .header-section { 
-    background-color: #FAF4F1; 
-    overflow: hidden; 
+
+  .header-section {
+    background-color: #FAF4F1;
+    overflow: hidden;
   }
-  
-  .bottom-section { 
-    background-color: #cce9ff; 
-    height: 200px; 
+
+  .bottom-section {
+    background-color: #cce9ff;
+    height: 200px;
   }
 
   /* --- Top Navigation --- */
-  .nav-container { 
-    max-width: 1400px; 
-    margin: 0 auto; 
-    padding: 1.5rem 2rem; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .nav-left { display: flex; align-items: center; gap: 2rem; }
   .logo { display: flex; align-items: center; }
   .logo img { height: 32px; width: auto; } /* Sizes the SVG logo appropriately */
-  
+
   .nav-links { display: flex; list-style: none; gap: 1.5rem; }
   .nav-links li { color: #001a4d; font-size: 0.95rem; font-weight: 500; cursor: pointer; }
-  
+
   .nav-right { display: flex; align-items: center; gap: 1.5rem; }
   .login-link { color: #001a4d; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
-  .btn-primary { 
-    background-color: #1a56ff; 
-    color: white; 
-    border: none; 
-    padding: 0.7rem 1.5rem; 
-    border-radius: 9999px; 
-    font-size: 0.95rem; 
-    font-weight: 600; 
-    cursor: pointer; 
+  .btn-primary {
+    background-color: #1a56ff;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
   }
 
   /* --- Header / Hero Layout --- */
-  .hero-container { 
-    max-width: 1400px; 
-    margin: 0 auto; 
-    display: flex; 
-    align-items: stretch; 
-    min-height: 350px; 
+  .hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    min-height: 350px;
   }
-  
-  .col { 
-    flex: 1; 
-    display: flex; 
-    flex-direction: column; 
+
+  .col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     background-color: transparent; /* Removed grey mockup color */
   }
-  
+
   /* --- Left Column Content --- */
-  .col-left { 
+  .col-left {
   /* Shrinks padding proportionally on smaller screens */
-  padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 3vw, 3rem); 
-  justify-content: center; 
-  background-color: transparent; 
+  padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 3vw, 3rem);
+  justify-content: center;
+  background-color: transparent;
 }
   .rating { font-size: 0.8rem; color: #4a4a4a; margin-bottom: 1.5rem; font-weight: 500; }
-  .subheading { 
-    color: #9b51e0; 
-    font-size: 0.75rem; 
-    font-weight: 700; 
-    letter-spacing: 1px; 
-    text-transform: uppercase; 
-    margin-bottom: 0.5rem; 
+  .subheading {
+    color: #9b51e0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
   }
-  .main-heading { 
-  font-family: "STIX Two Text", serif; 
-  color: #001a4d; 
+  .main-heading {
+  font-family: "STIX Two Text", serif;
+  color: #001a4d;
   font-size: clamp(2.5rem, 5vw, 4.5rem); /* Scales proportionally */
-  line-height: 1.1; 
-  margin-bottom: 1rem; 
-  font-weight: 400; 
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  font-weight: 400;
   letter-spacing: -2px;
 }
 
-.description { 
-  color: #001a4d; 
+.description {
+  color: #001a4d;
   font-size: clamp(1rem, 1.5vw, 1.1rem); /* Scales proportionally */
-  line-height: 1.5; 
-  margin-bottom: 2rem; 
-  max-width: 95%; 
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  max-width: 95%;
 }
   .col-left .btn-primary { width: fit-content; padding: 0.8rem 1.8rem; font-size: 1rem;  }
 
   /* --- Right Column Content (Video) --- */
-  .col-right { 
-    position: relative; 
-    display: flex; 
-    align-items: center; 
+  .col-right {
+    position: relative;
+    display: flex;
+    align-items: center;
     background-color: transparent; /* Removed yellow mockup color */
   }
-  
-  .video-wrapper { 
-  position: absolute; 
+
+  .video-wrapper {
+  position: absolute;
   /* Swapped static 880px for a responsive width */
-  width: min(880px, 74vw); 
-  left: -2rem; 
+  width: min(880px, 74vw);
+  left: -2rem;
   bottom: -3rem;
   top: auto;
-  z-index: 10; 
-  border-radius: 8px; 
-  overflow: hidden; 
-  background: white; 
+  z-index: 10;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
 }
   .hero-video { width: 100%; display: block; object-fit: cover; }
   .hero-mobile-img {
@@ -143,25 +143,24 @@
 
   /* --- Responsive Breakpoints --- */
   @media (max-width: 992px) {
-    .hero-video { display: none; } 
+    .hero-video { display: none; }
     .hero-mobile-img { display: block; }
-    .nav-links { display: none; } 
+    .nav-links { display: none; }
     .hero-container { flex-direction: column; }
-    .main-heading { font-size: clamp(2.2rem, 7vw, 4rem); }
-    .col-left { padding: 3rem 2rem; align-items: center; text-align: center; }
+    .main-heading { font-size: clamp(3.2rem, 7vw, 4rem); }
+    .col-left { padding: 2rem clamp(1rem, 10vw, 12rem); align-items: center; text-align: center; }
     .description { max-width: 100%; }
-    
-    .col-right { min-height: 300px; padding: 2rem }
-    .video-wrapper { 
-      position: relative; 
-      width: 100%; 
-      top: 0; 
+    .col-right { min-height: 300px; padding: 0rem 1rem 2rem }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      top: 0;
       left: 0;
-      transform: none; 
-      margin: 0 auto; 
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* Shadow goes here! */
+      transform: none;
+      margin: 0 auto;
+      box-shadow: 0 0px 25px rgba(0,0,0,0.15); /* Shadow goes here! */
     }
-    
+
   }
 </style>
 </head>
@@ -189,7 +188,7 @@
 
   <header class="header-section">
     <div class="hero-container">
-      
+
       <div class="col col-left">
         <div class="rating">4.6 ★★★★★ | Google</div>
         <div class="subheading">WAVE: SMALL BUSINESS SOFTWARE</div>
